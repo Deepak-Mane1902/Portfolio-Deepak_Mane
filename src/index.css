@@ -1,0 +1,104 @@
+@import "tailwindcss";
+    :root{
+      --bg-color: #0a011f;              /* page background */
+      --line-color: rgba(255,255,255,0.09); /* grid line color + opacity */
+      --line-width: 1px;               /* thickness of grid lines */
+      --cell-size: 24px;               /* spacing between grid lines */
+    }
+
+  @font-face {
+  font-family: 'Elgoc';
+  src: url('./fonts/ElgocMedium.otf') format('opentype');
+  font-weight: 500; /* or whatever weight it is */
+  font-style: normal;
+}
+
+    /* Responsive change — smaller gaps on larger screens (optional) */
+    @media (min-width: 768px){
+      :root{ --cell-size: 20px; }
+    }
+    @media (min-width: 1200px){
+      :root{ --cell-size: 16px; }
+    }
+
+    /* =========================
+       Page / Layout
+       ========================= */
+    html,body{
+      height: 100%;
+      margin: 0;
+      background: var(--bg-color);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: white;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* =========================
+       GRID OVERLAY
+       - Using two linear-gradients:
+         * one for vertical lines (repeating)
+         * one for horizontal lines (repeating)
+       - They are combined in the background layers.
+       - background-size controls the spacing.
+       ========================= */
+    .grid-overlay { 
+      height: 100vh;
+      position: absolute;
+      inset: 0; /* top:0; right:0; bottom:0; left:0; */
+      pointer-events: none; /* doesn't block clicks */
+      /* two repeating linear gradients stacked */
+      background-image:
+        repeating-linear-gradient(
+          to right,
+          var(--line-color),
+          var(--line-color) var(--line-width),
+          transparent var(--line-width),
+          transparent var(--cell-size)
+        ),
+        repeating-linear-gradient(
+          to bottom,
+          var(--line-color),
+          var(--line-color) var(--line-width),
+          transparent var(--line-width),
+          transparent var(--cell-size)
+        );
+      /* background-origin and background-attachment default OK */
+    }
+
+    /* Optional: add a vertical fade from top so the grid appears to fade out */
+    .grid-overlay.fade-top {
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0) 70%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0) 70%);
+    }
+
+.menu-items-mobRes{
+  cursor: pointer;
+}
+
+
+@keyframes blub {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+  /* 66% { transform: scale(0.8); } */
+  100% { transform: scale(1);  }
+}
+
+.blub-animation {
+  animation: blub 1.5s ease-in-out infinite 1s;
+  -webkit-animation: blub 1.5s ease-in-out infinite 1s;
+}
+
+.btn-dwn-cv{
+
+}
+
+.btn-dwn-cv{
+  box-shadow:0 0 2px #8245ec ,
+             0 0 2px #8245ec,
+             0 0 8px #8245ec;
+}
