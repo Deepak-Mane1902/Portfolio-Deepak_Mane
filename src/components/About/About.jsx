@@ -1,12 +1,13 @@
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
+import Tilt from 'react-parallax-tilt'
 
 const About = () => {
   return (
     <section
       id="about"
-      className="py-4 px-[7vw] md:px-[7vw] lg:px-[14vw] font-sans mt-16 md:mt-24 lg:mt-32"
+      className="py-4 pb-10 px-[7vw] md:px-[7vw] lg:px-[14vw] font-sans mt-16 md:mt-24 lg:mt-32"
     >
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
         {/* Left Side */}
@@ -42,7 +43,7 @@ const About = () => {
           </p>
 
 
-          <button className="btn-dwn-cv mt-1 py-4 px-[2vw] rounded-2xl bg-[#2b0a66] border-none 
+          <button className="btn-dwn-cv mt-4 py-4 px-[4vw] mx-30 md:mx-0 rounded-2xl bg-[#2b0a66] border-none 
           hover:bg-[#8245ec]  cursor-pointer flex gap-2 items-center transition-all ease-in-out duration-150 ">
           <a href="#"
           target='_blank'
@@ -51,10 +52,17 @@ const About = () => {
           <FiArrowRight className="text-2xl hover:pl-1"/>
           </a>
           </button>
-          
         </div>
-{/* Right Side */}
 
+        {/* Right Side */}
+        <div className="md:w-1/2 flex justify-center md:justify-end">
+          <Tilt className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30vw] md:h-1/2 border-4 border-purple-700 rounded-full">
+          {/* <img src='./profile/profile2.png' alt="User Profile Image" 
+          className="w-[30vw] h-1/2 rounded-full object-cover drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)] blub-animation duration-100"/> */}
+          <video src='./video/dev.mp4' autoPlay loop muted alt="User Profile Image" 
+          className="md:w-full w-[200vw] md:h-1/2 h-full rounded-full object-cover drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)] blub-animation-video duration-100"/>
+          </Tilt>
+        </div>
       </div>
     </section>
   );

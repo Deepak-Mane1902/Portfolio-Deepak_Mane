@@ -19,11 +19,11 @@ const App = () => {
       <Nav/>
        <About/>
    <Skills/>
-        <Exp/>
-      <Work/>
+         <Exp/>
+<Work/>
       <Edu/>
       <Contact/>
-      <Foot/>
+      <Foot/> 
     </div>
   </div>
   )

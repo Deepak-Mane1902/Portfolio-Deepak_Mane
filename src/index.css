@@ -92,13 +92,34 @@
   animation: blub 1.5s ease-in-out infinite 1s;
   -webkit-animation: blub 1.5s ease-in-out infinite 1s;
 }
-
-.btn-dwn-cv{
-
+.blub-animation-video {
+  animation: blub 10s ease-in-out infinite 1s;
+  -webkit-animation: blub 10s ease-in-out infinite 1s;
 }
+
+
 
 .btn-dwn-cv{
   box-shadow:0 0 2px #8245ec ,
              0 0 2px #8245ec,
              0 0 8px #8245ec;
+}
+
+
+.skills-gradient {
+  background: linear-gradient(38.76deg, rgba(204, 0, 187, 0.15) 0%,
+  rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%);
+}
+
+@layer utilities {
+  .clip-path-custom{
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100% );
+  }
+  .clip-path-custom2{
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 25% 95%, 0 100% );
+  }
+
+  .submit-btn{
+    background: linear-gradient(from right purple ,pink);
+  }
 }

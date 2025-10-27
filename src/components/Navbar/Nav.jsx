@@ -10,31 +10,58 @@ const Nav = () => {
 
   //check scroll and change navbar background 
   useEffect(() => {
-    const handleScroll=() => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 50);
 
-    window.addEventListener("scroll",handleScroll);
-    return ()=> window.removeEventListener('scroll', handleScroll);
-  })
+    // highlight active section while scrolling
+    const sections = menuItems.map(item => document.getElementById(item.id));
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section, index) => {
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        const bottom = top + section.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < bottom) {
+          setIsActiveSection(menuItems[index].id);
+        }
+      }
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+  // useEffect(() => {
+  //   const handleScroll=() => {
+  //     setIsScrolled(window.scrollY > 50);
+  //   };
+
+  //   window.addEventListener("scroll",handleScroll);
+  //   return ()=> window.removeEventListener('scroll', handleScroll);
+  // })
    
 
 
   // Scroll Function 
-  const handleMenuItemClick =(sectionId)=>{
-    setIsActiveSection(sectionId);
-    setIsOpen(false);
+const handleMenuItemClick = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+  setIsActiveSection(sectionId);
+  setIsOpen(false);
+};
+
 
   
   const menuItems = [
     {id:'about',label:'About  '},
     {id:'skills',label:'Skills'},
     {id:'experience',label:'Experience'},
-    {id:'project',label:'Project'},
-    // {id:'work',label:'Work'},
+    {id:'work',label:'Project'},
     {id:'education',label:'Education'},
-    // {id:'contact',label:'Contact'},
   ]
 
   return (
@@ -43,7 +70,7 @@ const Nav = () => {
       <div className="text-white py-5 flex justify-between items-center">
 
         {/* Logo */}
-
+      
         <div className="text-xl font-semibold cursor-pointer">
           <span className='text-[#8245ec]'>&lt;</span>
           <span className='text-white'>Deepak</span>
@@ -56,7 +83,8 @@ const Nav = () => {
       {/* Desktop Menu */}
       <ul className='hidden md:flex space-x-8 text-gray-300'>
         {menuItems.map((item)=>(
-          <li key={item.id} className={`cursor-pointer text-white/80  hover:text-[#8245ec] ${
+          <li key={item.id} className={`cursor-pointer text-white/80 
+             hover:text-[#8245ec] ${
           isActiveSection === item.id ? "text-[#8245ec]" : ""}`}>
             <button onClick={()=> handleMenuItemClick(item.id)}>{item.label}</button>
           </li>
@@ -72,7 +100,7 @@ const Nav = () => {
         <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 hover:text-[#8245ec]'>
         <FaLinkedin size={24}/>
         </a>
-          <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl'>Connect
+          <a href="https://api.whatsapp.com/send/?phone=9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl'>Connect
         <FaWhatsapp size={24}/>
         </a>
       </div>
