@@ -106,7 +106,7 @@ const Myself = () => {
           <img
             src="/profile/profile1.jpg"
             alt="Profile Image"
-            className="rounded-[10vw] w-1/2 md:w-[60vw] lg:w-[30vw] md:h-[90%] lg:h-[65%] md:mr-[-20vw] lg:mr-0"
+            className="rounded-[10vw] w-1/2 md:w-[62vw] lg:w-[30vw] md:h-[90%] md:h-[50vh] lg:h-[65%] md:mr-[-20vw] lg:mr-0"
           />
         </div>
       </div>
