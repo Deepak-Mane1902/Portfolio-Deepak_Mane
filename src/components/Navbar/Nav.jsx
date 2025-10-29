@@ -100,7 +100,7 @@ const handleMenuItemClick = (sectionId) => {
         <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='shadow-lg hover:shadow-blue-500/50 text-gray-500 hover:text-blue-500'>
         <FaLinkedin size={24}/>
         </a>
-          <a href="https://api.whatsapp.com/send/?phone=9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-400 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl shadow-lg hover:shadow-green-500/50'>Connect
+          <a href="https://api.whatsapp.com/send/?phone=+91-9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-400 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl shadow-lg hover:shadow-green-500/50'>Connect
         <FaWhatsapp size={24}/>
         </a>
       </div>
@@ -140,7 +140,7 @@ const handleMenuItemClick = (sectionId) => {
         text-gray-700  hover:scale-120 transition-all duration-75 ease-in-out shadow-lg hover:shadow-blue-500/50'>
         <FaLinkedin size={24}/>
         </a>
-        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  absolute md:right-[-74vw] lg:right-[-86vw] right-[-60vw] rounded-xl shadow-lg hover:shadow-green-500/50'>Whatsapp
+        <a href="https://api.whatsapp.com/send/?phone=+91-9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  absolute md:right-[-74vw] lg:right-[-86vw] right-[-60vw] rounded-xl shadow-lg hover:shadow-green-500/50'>Whatsapp
         <FaWhatsapp size={24}/>
         </a>
         

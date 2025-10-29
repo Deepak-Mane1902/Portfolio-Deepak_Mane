@@ -89,7 +89,7 @@ const Myself = () => {
           </p>
           <button className="relative left-[-24vw] md:left-0 mx-5 px-8 py-4 bg-green-800 hover:bg-green-500 cursor-pointer transition-all ease-in-out duration-300 rounded-2xl text-white/90">
             <a
-              href="https://api.whatsapp.com/send/?phone=9960633200&text&type=phone_number&app_absent=0"
+              href="https://api.whatsapp.com/send/?phone=+91-9960633200&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl flex items-center text-center gap-2"
