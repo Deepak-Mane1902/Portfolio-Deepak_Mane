@@ -208,7 +208,7 @@ export const SkillsInfo = [
       image: mojito,
       tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
       github: "https://github.com/Deepak-Mane1902/gsap_cocktails",
-      webapp: "gsap-cocktails-teal.vercel.app",
+      webapp: "https://gsap-cocktails-teal.vercel.app",
     },
     {
       id: 1,
@@ -228,7 +228,7 @@ export const SkillsInfo = [
       image: faceSerum,
       tags: ["React JS", "API", "HTML", "CSS", "JavaScript"],
       github: "https://github.com/Deepak-Mane1902/FaceSerum",
-      webapp: "face-serum.vercel.app",
+      webapp: "https://face-serum.vercel.app",
     },
     {
       id: 3,
@@ -278,7 +278,7 @@ export const SkillsInfo = [
       image: fanta,
       tags: ["HTML","CSS", "Javascript", "GSAP","Scroll-Trigger"],
       github: "https://github.com/Deepak-Mane1902/Fanta-Scroll_Animation",
-      webapp: "fanta-scroll-animation.vercel.app",
+      webapp: "https://fanta-scroll-animation.vercel.app",
     },
     {
       id: 8,
