@@ -11,12 +11,15 @@ import BlurBulb from './BlurBulb'
 import ScrollText from './components/TextAnime'
 import Myself from './components/Myself/Myself'
 import Hero from './components/Hero/Hero'
+import SnowParticles from './particles'
 
 const App = () => {
   return (
   <div className="page  ">
 <BlurBulb position={{top:'4%', left:'20%'}} size={{width:'30%',height:'5%'}}></BlurBulb>
-    <div className="grid-overlay fade-top" aria-hidden="true"></div>
+    <div className="grid-overlay fade-top" aria-hidden="true">
+      <SnowParticles/>
+    </div>
     <div className='pt-0 flex flex-col relative'>
       <Nav/>
        <Hero />

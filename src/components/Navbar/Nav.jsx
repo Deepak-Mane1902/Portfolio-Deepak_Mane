@@ -94,13 +94,13 @@ const handleMenuItemClick = (sectionId) => {
       {/* Social Media Icons */}
 
       <div className="hidden lg:flex items-center ml-[-4vw] space-x-4">
-        <a href="https://github.com/Deepak-Mane1902" target='_blank' rel='noopener noreferrer' className='text-gray-500 hover:text-white'>
+        <a href="https://github.com/Deepak-Mane1902" target='_blank' rel='noopener noreferrer' className='text-gray-500 hover:text-white shadow-lg hover:shadow-white-500/50'>
         <FaGithub size={24}/>
         </a>
-        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-500 hover:text-blue-500'>
+        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='shadow-lg hover:shadow-blue-500/50 text-gray-500 hover:text-blue-500'>
         <FaLinkedin size={24}/>
         </a>
-          <a href="https://api.whatsapp.com/send/?phone=9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-400 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl'>Connect
+          <a href="https://api.whatsapp.com/send/?phone=9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-400 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl shadow-lg hover:shadow-green-500/50'>Connect
         <FaWhatsapp size={24}/>
         </a>
       </div>
@@ -133,14 +133,14 @@ const handleMenuItemClick = (sectionId) => {
       ))}
       </ul>
         <div className="absolute bottom-5 left-18 flex space-x-4 items-center">
-        <a href="https://github.com/Deepak-Mane1902" target='_blank' rel='noopener noreferrer' className='text-gray-700 hover:text-white hover:scale-120 transition-all duration-75 ease-in-out'>
+        <a href="https://github.com/Deepak-Mane1902" target='_blank' rel='noopener noreferrer' className='text-gray-700 hover:text-white hover:scale-120 transition-all duration-75 ease-in-out shadow-lg hover:shadow-white-500/50'>
         <FaGithub size={24}/>
         </a>
         <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='  hover:text-blue-700
-        text-gray-700  hover:scale-120 transition-all duration-75 ease-in-out'>
+        text-gray-700  hover:scale-120 transition-all duration-75 ease-in-out shadow-lg hover:shadow-blue-500/50'>
         <FaLinkedin size={24}/>
         </a>
-        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  absolute md:right-[-74vw] lg:right-[-86vw] right-[-60vw] rounded-xl'>Whatsapp
+        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  absolute md:right-[-74vw] lg:right-[-86vw] right-[-60vw] rounded-xl shadow-lg hover:shadow-green-500/50'>Whatsapp
         <FaWhatsapp size={24}/>
         </a>
         

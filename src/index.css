@@ -33,6 +33,7 @@
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color: white;
     }
+    
 
     .page {
       position: relative;
@@ -169,3 +170,10 @@
   cursor: pointer;
 }
 
+#relIcon{
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
