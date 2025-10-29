@@ -1,30 +1,67 @@
-import React from "react";
-import {education} from '../../../constants'
+import React, { useEffect, useRef } from "react";
+import { education } from "../../../constants";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Edu = () => {
+  const eduRefs = useRef([]);
+
+  useEffect(() => {
+    // Animate all education cards together
+    gsap.fromTo(
+      eduRefs.current,
+      {
+        opacity: 0,
+        y: 80,
+        scale: 0.9,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 1, // 👈 cards reveal one after another
+        scrollTrigger: {
+          trigger: "#education",
+          start: "top 60%",
+          end: "bottom 40%",
+          scrub: true, // 👈 sync with scroll
+          toggleActions: "play none none reverse",
+          // markers: true, // 👈 Uncomment for debugging start/end points
+        },
+      }
+    );
+  }, []);
+
   return (
     <section
+    
       id="education"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
+      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans skills-gradient "
     >
       {/* Section Title */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-[elgoc] uppercase text-white">EDUCATION</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
-          My education has been a journey of learning and development. Here are the details of my academic background
+          My education has been a journey of learning and development. Here are
+          the details of my academic background
         </p>
       </div>
 
       {/* Education Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:translate-x-0 w-1 bg-white h-full"></div>
 
         {/* Education Entries */}
         {education.map((edu, index) => (
           <div
             key={edu.id}
+            ref={(el) => (eduRefs.current[index] = el)} // 👈 track each entry
             className={`flex flex-col sm:flex-row items-center mb-16 ${
               index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
             }`}
@@ -40,8 +77,10 @@ const Edu = () => {
 
             {/* Content Section */}
             <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0 md:relative md:left-[-14vw]" : "sm:mr-0 md:relative md:right-[-14vw]"
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
+                index % 2 === 0
+                  ? "sm:ml-0 md:relative md:left-[28vw] lg:left-[23vw]"
+                  : "sm:mr-0 md:relative md:right-[28vw] lg:right-[23vw]"
               } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
             >
               {/* Flex container for image and text */}
@@ -65,7 +104,6 @@ const Edu = () => {
                       {edu.school}
                     </h4>
                   </div>
-                  {/* Date at the bottom */}
                   <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
                 </div>
               </div>

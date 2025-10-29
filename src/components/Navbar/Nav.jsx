@@ -31,7 +31,7 @@ const Nav = () => {
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+},);
 
   // useEffect(() => {
   //   const handleScroll=() => {
@@ -57,15 +57,15 @@ const handleMenuItemClick = (sectionId) => {
 
   
   const menuItems = [
-    {id:'about',label:'About  '},
+    {id:'about',label:'Home  '},
     {id:'skills',label:'Skills'},
-    {id:'experience',label:'Experience'},
+    {id:'myself',label:'About'},
     {id:'work',label:'Project'},
     {id:'education',label:'Education'},
   ]
 
   return (
-    <nav className={`fixed t-0 w-full z-50 transition-all duration-300 px-[7vw] md:px-[7vw] lg:px-[7vw] ${
+    <nav  className={`fixed t-0 w-full z-50 transition-all duration-300 px-[7vw] md:px-[7vw] lg:px-[7vw] ${
     isScrolled ? "bg-[#050414] bg-opacity-50 backdroup-blur-md shadow-md" : "bg-transparent"}`}>
       <div className="text-white py-5 flex justify-between items-center">
 
@@ -81,34 +81,34 @@ const handleMenuItemClick = (sectionId) => {
         </div>
 
       {/* Desktop Menu */}
-      <ul className='hidden md:flex space-x-8 text-gray-300'>
+      <ul className='hidden lg:flex space-x-8 text-gray-300'>
         {menuItems.map((item)=>(
-          <li key={item.id} className={`cursor-pointer text-white/80 
+          <li key={item.id} className={` cursor-pointer text-white/80 
              hover:text-[#8245ec] ${
           isActiveSection === item.id ? "text-[#8245ec]" : ""}`}>
-            <button onClick={()=> handleMenuItemClick(item.id)}>{item.label}</button>
+            <button onClick={()=> handleMenuItemClick(item.id)} className="cursor-pointer">{item.label}</button>
           </li>
         ))}
       </ul>
 
       {/* Social Media Icons */}
 
-      <div className="hidden md:flex items-center ml-[-4vw] space-x-4">
-        <a href="https://github.com/Deepak-Mane1902" target='_blank' rel='noopener noreferrer' className='text-gray-300 hover:text-[#8245ec]'>
+      <div className="hidden lg:flex items-center ml-[-4vw] space-x-4">
+        <a href="https://github.com/Deepak-Mane1902" target='_blank' rel='noopener noreferrer' className='text-gray-500 hover:text-white'>
         <FaGithub size={24}/>
         </a>
-        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 hover:text-[#8245ec]'>
+        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-500 hover:text-blue-500'>
         <FaLinkedin size={24}/>
         </a>
-          <a href="https://api.whatsapp.com/send/?phone=9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl'>Connect
+          <a href="https://api.whatsapp.com/send/?phone=9960633200&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer' className='text-gray-400 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  rounded-xl'>Connect
         <FaWhatsapp size={24}/>
         </a>
       </div>
 
       {/* Mobile Menu Icons */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
         {
-          isOpen ? (<FiX className="text-3xl text-[#8245ec] cursor-pointer "
+          isOpen ? (<FiX className="text-3xl text-[#8245ec] cursor-pointer! "
             onClick={()=>setIsOpen(false)}/>
           )
           : (
@@ -123,10 +123,10 @@ const handleMenuItemClick = (sectionId) => {
         <div className="absolute top-16 right-1 transform-x-1/2 w-full bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50">
       <ul className='flex flex-col items-start space-y-4 p-18 '>
       {menuItems.map((item)=>(
-          <li key={item.id} className={`menu-items-mobRes text-white/80  hover:text-[#8245ec]  flex justify-between items-center gap-50 cursor-pointer ${
+          <li key={item.id} className={`menu-items-mobRes text-white/80  hover:text-[#8245ec]  flex justify-between items-center gap-50 cursor-pointer! ${
           isActiveSection === item.id ? "text-[#8245ec]" : ""}`}>
             <button onClick={()=> handleMenuItemClick(item.id)} className='flex'>{item.label}
-            <BsPlusCircleDotted  className='cursor-pointer absolute right-10'/>
+            <BsPlusCircleDotted  className='cursor-pointer! absolute right-10'/>
             </button>
 
           </li>
@@ -140,7 +140,7 @@ const handleMenuItemClick = (sectionId) => {
         text-gray-700  hover:scale-120 transition-all duration-75 ease-in-out'>
         <FaLinkedin size={24}/>
         </a>
-        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  absolute lg:right-[-86vw] right-[-60vw] rounded-xl'>Whatsapp
+        <a href="https://www.linkedin.com/in/mane-deepak" target='_blank' rel='noopener noreferrer' className='text-gray-300 flex gap-2 p-2 bg-green-900 hover:bg-green-500 hover:text-white  absolute md:right-[-74vw] lg:right-[-86vw] right-[-60vw] rounded-xl'>Whatsapp
         <FaWhatsapp size={24}/>
         </a>
         

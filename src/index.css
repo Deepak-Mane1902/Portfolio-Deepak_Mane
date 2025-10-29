@@ -3,7 +3,8 @@
       --bg-color: #0a011f;              /* page background */
       --line-color: rgba(255,255,255,0.09); /* grid line color + opacity */
       --line-width: 1px;               /* thickness of grid lines */
-      --cell-size: 24px;               /* spacing between grid lines */
+      --cell-size: 24px;  
+      --text-shadow-xl: 0 35px 35px rgb(0, 0, 0 / 0.25);              /* spacing between grid lines */
     }
 
   @font-face {
@@ -25,6 +26,7 @@
        Page / Layout
        ========================= */
     html,body{
+      scroll-behavior: smooth;
       height: 100%;
       margin: 0;
       background: var(--bg-color);
@@ -112,7 +114,7 @@
 }
 
 @layer utilities {
-  .clip-path-custom{
+  .clipCustom{
     clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100% );
   }
   .clip-path-custom2{
@@ -123,3 +125,47 @@
     background: linear-gradient(from right purple ,pink);
   }
 }
+
+
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroller {
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.scroller span {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .scroller {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}
+
+
+.scrollHorizantally-text {
+  display: flex;
+  gap: 4rem;
+  white-space: nowrap;
+  font-size: 8vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #8245ec;
+  will-change: transform;
+}
+.menuTypeItems{
+  cursor: pointer;
+}
+

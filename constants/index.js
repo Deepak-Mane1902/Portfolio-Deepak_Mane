@@ -39,20 +39,21 @@ import agcLogo from '/company_logo/agc_logo.png';
 import newtonschoolLogo from '/company_logo/newtonschool_logo.png';
 
 // Education Section Logo's
-import glaLogo from '/education_logo/gla_logo.png';
-import bsaLogo from '/education_logo/bsa_logo.png';
-import vpsLogo from '/education_logo/vps_logo.png';
+import kpb from '/education_logo/kpb.png'
+import mehs from '/education_logo/mehs.png'
+import nejc from '/education_logo/nejc.png'
+
 
 // Project Section Logo's
-import githubdetLogo from '/work_logo/github_det.png';
-import csprepLogo from '/work_logo/cs_prep.png';
-import movierecLogo from '/work_logo/movie_rec.png';
-import taskremLogo from '/work_logo/task_rem.png';
-import npmLogo from '/work_logo/npm.png';
-import webverLogo from '/work_logo/web_dig.png';
-import cmLogo from '/work_logo/cm.png';
-import imagesearchLogo from '/work_logo/image_search.png';
-import removebgLogo from '/work_logo/remove_bg.png';
+import dragNotes from '/work_logo/draggleNotes.png'
+import faceSerum from '/work_logo/faceSerum.png'
+import fanta from '/work_logo/fanta.png'
+import golf from '/work_logo/golf.png'
+import izuku from '/work_logo/izuku.png'
+import mojito from '/work_logo/mojito.png'
+import ochi from '/work_logo/ochi.png'
+import randColor from '/work_logo/randColor.png'
+import stackDrive from '/work_logo/stackdrive.png'
 
 
 export const SkillsInfo = [
@@ -171,131 +172,122 @@ export const SkillsInfo = [
   export const education = [
     {
       id: 0,
-      img: glaLogo,
-      school: "GLA University, Mathura",
-      date: "Sept 2022 - July 2024",
-      grade: "7.81 CGPA",
-      desc: "I have completed my Master's degree (MCA) in Computer Applications from GLA University, Mathura. During my time at GLA, I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various workshops and technical events, which enhanced my skills and knowledge. My experience at GLA University has been instrumental in shaping my technical abilities and professional growth.",
-      degree: "Master of Computer Applications - MCA",
+      img: kpb,
+      school: "KPB Hinduja Collge, Charni Road",
+      date: "Aug 2022 - June 2025",
+      grade: "7.78 CGPA",
+      desc: "I completed my Bachelor's degree in Computer Application  (BCA) from KPB Hinduja College , Charni-road. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development. My time at Hinduja College allowed me to work on projects that applied theoretical concepts to real-world problems.",
+      degree: "Bachelor of Computer Application - BCA (Computer Science)",
     },
     {
       id: 1,
-      img: bsaLogo,
-      school: "BSA College, Mathura",
-      date: "Sept 2018 - Aug 2021",
-      grade: "73.2%",
-      desc: "I completed my Bachelor's degree in Computer Science (B.Sc.) from BSA College, Mathura. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development. My time at BSA College allowed me to work on projects that applied theoretical concepts to real-world problems.",
-      degree: "Bachelor of Science - BSC (Computer Science)",
+      img: nejc,
+      school: "New English Jr College , Ulhasnagar",
+      date: "July 2019 - July 2021",
+      grade: "83.67%",
+      desc: "I completed my class 12 education from Vatsalya Public School, Govardhan, under the Maharashtra State board, where I Commerce (I.T with Mathematics) .",
+      degree: "HSC(XII) - Commerce ( Maths with I.T)",
     },
     {
       id: 2,
-      img: vpsLogo,
-      school: "Vatsalya Public School Govardhan, Mathura",
-      date: "Apr 2017 - March 2018",
-      grade: "78%",
-      desc: "I completed my class 12 education from Vatsalya Public School, Govardhan, under the CBSE board, where I studied Physics, Chemistry, and Mathematics (PCM) with Computer Science.",
-      degree: "CBSE(XII) - PCM with Computer Science",
-    },
-    {
-      id: 3,
-      img: vpsLogo,
-      school: "Vatsalya Public School Govardhan, Mathura",
-      date: "Apr 2015 - March 2016",
-      grade: "87.5%",
-      desc: "I completed my class 10 education from Vatsalya Public School, Govardhan, under the CBSE board, where I studied Science with Computer.",
-      degree: "CBSE(X), Science with Computer Application",
+      img: mehs,
+      school: "Modern English High School, Ambernath",
+      date: "June 2013 - June 2019",
+      grade: "65%",
+      desc: "I completed my class 10 education from Modern English High School, Ambernath, under the state board of maharashtra, where I studied  along with Computer fundamentals.",
+      degree: "SSC(X), ",
     },
   ];
   
   export const projects = [
     {
       id: 0,
-      title: "GitHub Profile Detective",
+      title: "Mojito - Cocktail center",
       description:
-        "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
-      image: githubdetLogo,
+        "A visually stunning and smooth web experience built using GSAP (GreenSock Animation Platform). The project showcases elegant scroll-based animations, fluid transitions, and modern UI design inspired by cocktail aesthetics. It demonstrates advanced front-end animation techniques, performance optimization, and responsive design — delivering an immersive, interactive user experience.",
+      image: mojito,
       tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
-      github: "https://github.com/codingmastr/GitHub-Profile-Search-App-Using-React-JS",
-      webapp: "https://githubprofiledetective.netlify.app/",
+      github: "https://github.com/Deepak-Mane1902/gsap_cocktails",
+      webapp: "gsap-cocktails-teal.vercel.app",
     },
     {
       id: 1,
-      title: "CS Prep",
+      title: "Draggable Sticky Notes",
       description:
-        "A full-stack quiz-based platform designed for GATE/UGC NET students to practice previous year questions and create customized tests. The platform offers comprehensive profile stats and detailed results, helping students track and improve their preparation journey effectively.",
-      image: csprepLogo,
-      tags: ["React JS", "Node.js", "MongoDB", "Express", "HTML", "CSS", "JavaScript"],
-      github: "https://github.com/codingmastr/CSPrep",
-      webapp: "https://csprep.netlify.app/",
+        "Draggable Sticky Notes is an interactive web app built with React & Vite that allows users to create, move, and manage virtual sticky notes on a canvas. Each note is fully draggable, editable, and designed to replicate the look and feel of real-life sticky notes—offering a fun, visual way to capture ideas, reminders, or brainstorming sessions right in your browser.",
+      image: dragNotes,
+      tags: ["React JS",  "HTML", "CSS", "JavaScript"],
+      github: "https://github.com/Deepak-Mane1902/Draggable-Sticky-Notes",
+      webapp: "https://deepak-mane1902.github.io/Draggable-Sticky-Notes/",
     },
     {
       id: 2,
-      title: "Movie Recommendation App",
+      title: "Face Serum – Aesthetic Skincare Experience",
       description:
-        "A React-based web application that provides movie recommendations based on different criteria, such as genres, user preferences, and popular trends. The intuitive design and smooth experience make it a go-to app for movie enthusiasts.",
-      image: movierecLogo,
+        "Face Serum is a modern, visually captivating web experience that showcases a premium skincare serum brand. Built with React, GSAP animations, and Tailwind CSS, the project focuses on smooth interactions, elegant transitions, and a clean, minimal design. It blends beauty and technology to highlight product details, brand essence, and user experience in a visually immersive way.",
+      image: faceSerum,
       tags: ["React JS", "API", "HTML", "CSS", "JavaScript"],
-      github: "https://github.com/codingmastr/Movie-Recommendation-App",
-      webapp: "https://movie-recommendation-app-jet.vercel.app/",
+      github: "https://github.com/Deepak-Mane1902/FaceSerum",
+      webapp: "face-serum.vercel.app",
     },
     {
       id: 3,
-      title: "Email Validator NPM Package",
+      title: "Ochi.design",
       description:
-        "An efficient and customizable NPM package for validating email addresses. Built using React.js and Node.js, it provides robust validation features to help developers ensure that email inputs meet required formats and standards.",
-      image: npmLogo,
-      tags: ["React JS", "Node.js", "NPM", "Validation"],
-      github: "https://github.com/codingmastr/cmtk-email-validator",
-      webapp: "https://www.npmjs.com/package/cmtk-email-validator",
+        "A modern, high-performance clone of the official Ochi.design website, built with React, Tailwind CSS, and GSAP for smooth animations and interactive motion effects. The project focuses on UI/UX precision, scroll-based transitions, and pixel-perfect responsiveness, delivering a seamless, immersive web experience. Deployed on Vercel for fast and reliable performance.",
+      image: ochi,
+      tags: ["React JS","GSAP","Locomotive Scroll"],
+      github: "https://vercel.com/deepak-mane1902s-projects/ochi-clone-wesite",
+      webapp: "https://ochi-clone-wesite.vercel.app/",
     },
     {
       id: 4,
-      title: "Task Reminder Chrome Extension Tool",
+      title: "Golf Website Landing Page",
       description:
-        "A productivity-boosting Chrome extension designed to help users manage and remember their daily tasks. Built using JavaScript, it offers a simple interface with reminders and task notifications to keep users on track.",
-      image: taskremLogo,
-      tags: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
-      github: "https://github.com/codingmastr/Task-Reminder-Tool",
-      webapp: "chrome://extensions/?id=kngheeibjnnidhfoomkpnbeghackheci",
+        "Golf Website Landing Page: A clean, modern landing-page template built to promote a fun and inclusive golf venue. Featuring key highlights like TopTracer-driving bays, lessons, adventure golf and a welcoming café, it invites visitors to “Eat. Drink. Play.” and experience golf in a relaxed, family-friendly setting.",
+      image: golf,
+      tags: ["JavaScript","GSAP", "HTML", "CSS"],
+      github: "https://github.com/Deepak-Mane1902/Golf-Website_landing-Page",
+      webapp: "https://deepak-mane1902.github.io/Golf-Website_landing-Page/",
     },
     {
       id: 5,
-      title: "Webverse Digital",
+      title: " “Villain Deku” ",
       description:
-        "The official website for Webverse Digital, a creative digital marketing agency. Built using HTML, CSS, and JavaScript, it features visually appealing animations and a clean design to showcase the agency's services.",
-      image: webverLogo,
-      tags: ["HTML", "CSS", "JavaScript", "Framer Motion"],
-      github: "https://github.com/codingmastr/Webverse-Digital",
-      webapp: "https://webversedigital.com/",
+        "“Villain Deku” is a striking personal portfolio inspired by the world of My Hero Academia. Built with HTML, CSS and a touch of JavaScript, it re-imagines the paths not taken: what if Izuku Midoriya became a villain? With bold visuals, thematic sections on characters and backgrounds, and a clean contact form, this site blends fan-creativity with web-design flair.",
+      image: izuku,
+      tags: ["HTML", "CSS", "JavaScript",],
+      github: "https://github.com/Deepak-Mane1902/Izuku-Midoriya",
+      webapp: "https://github.com/Deepak-Mane1902/Izuku-Midoriya",
     },
     {
       id: 6,
-      title: "Coding Master",
+      title: "StackDrive - cloud Storage Platform",
       description:
-        "An ed-tech platform where users can access tech and coding-related blogs, notes, interview questions, e-books, and premium content with payment integration. Built with full-stack technologies for a seamless learning experience.",
-      image: cmLogo,
+        "StackDrive is a sleek, modern cloud-storage application designed for simplicity and security. With seamless Google sign-in and user-friendly account access, it offers a hassle-free solution for storing and managing files online—no fuss, just reliable cloud access whenever you need it.",
+      image: stackDrive,
       tags: ["React JS", "Node.js", "MongoDB", "Express", "Payment Integration"],
-      github: "https://codingmasterweb.in/",
-      webapp: "https://codingmasterweb.in/",
+      github: "https://github.com/Deepak-Mane1902/StackDrive",
+      webapp: "https://stack-drive-cloud-storage.vercel.app/",
     },
     {
       id: 7,
-      title: "Image Search App",
+      title: "Fanta Scroll Animation",
       description:
-        "A React.js-based image search application that allows users to search and download high-quality images from the web. Built using external APIs to ensure a vast library of results for various queries.",
-      image: imagesearchLogo,
-      tags: ["React JS", "API", "Search Feature", "CSS", "Javascript"],
-      github: "https://github.com/codingmastr/Image-Search-App",
-      webapp: "https://imagsearch.netlify.app/",
+        "Fanta Scroll Animation is a visually engaging web experience that combines smooth GSAP-based scroll animations with vibrant Fanta-inspired visuals. The project showcases creative motion design, interactive transitions, and fluid scrolling effects — all built with React, GSAP, and modern web animations for a refreshing, immersive UI experience.",
+      image: fanta,
+      tags: ["HTML","CSS", "Javascript", "GSAP","Scroll-Trigger"],
+      github: "https://github.com/Deepak-Mane1902/Fanta-Scroll_Animation",
+      webapp: "fanta-scroll-animation.vercel.app",
     },
     {
       id: 8,
-      title: "Image Background Remover",
+      title: "Random Colors Generator",
       description:
-        "An efficient background removal app built with React.js and API integration. Users can upload any image, remove the background, and download the transparent version for further use.",
-      image: removebgLogo,
-      tags: ["React JS", "API", "Image Processing", "HTML", "CSS", "Javascript"],
-      github: "https://github.com/codingmastr/Image-Background-Remover",
-      webapp: "https://removeyourbg.netlify.app/",
+        "Discover unique and vibrant gradients at the click of a button! This interactive tool instantly generates random color combinations — complete with gradient previews and CSS code — and allows you to copy the styles in one click. Whether you’re designing a website, crafting graphics, or just exploring color palettes, this generator is your effortless source of inspiration.",
+      image: randColor,
+      tags: [ "HTML", "CSS", "Javascript"],
+      github: "https://github.com/Deepak-Mane1902/Random_Colors--Generator",
+      webapp: "https://deepak-mane1902.github.io/Random_Colors--Generator/",
     },
   ];  

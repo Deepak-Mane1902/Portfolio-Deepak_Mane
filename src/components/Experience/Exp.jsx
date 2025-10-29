@@ -1,11 +1,45 @@
-import React from "react";
-import { experiences } from '../../../constants'
+import React, { useEffect, useRef } from "react";
+import { experiences } from "../../../constants";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
+  const expRefs = useRef([]);
+
+  useEffect(() => {
+    // Animate all experience cards together
+    gsap.fromTo(
+      expRefs.current,
+      {
+        opacity: 0,
+        y: 90,
+        scale: 0.9,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 1, // 👈 cards reveal one by one
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top 85%",
+          end: "bottom 60%",
+          scrub: true, // 👈 scroll-based animation
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
     <section
+    
       id="experience"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2"
+      className="clip-path-custom2 py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans skills-gradient "
     >
       {/* Section Title */}
       <div className="text-center mb-16">
@@ -20,12 +54,13 @@ const Experience = () => {
       {/* Experience Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:translate-x-0 w-1 bg-white h-full"></div>
 
         {/* Experience Entries */}
         {experiences.map((experience, index) => (
           <div
             key={experience.id}
+            ref={(el) => (expRefs.current[index] = el)} // 👈 store refs
             className={`flex flex-col sm:flex-row items-center mb-16 ${
               index % 2 === 0 ? "sm:justify-end " : "sm:justify-start"
             }`}
@@ -41,8 +76,10 @@ const Experience = () => {
 
             {/* Content Section */}
             <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0 md:relative md:left-[14vw]" : "sm:mr-0 md:relative md:right-[14vw]"
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
+                index % 2 === 0
+                  ? "sm:ml-0 md:relative md:left-[24vw] lg:left-[14vw]"
+                  : "sm:mr-0 md:relative md:right-[24vw] lg:right-[14vw]"
               } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
             >
               {/* Flex container for image and text */}
@@ -66,7 +103,6 @@ const Experience = () => {
                       {experience.company}
                     </h4>
                   </div>
-                  {/* Date at the bottom */}
                   <p className="text-sm text-gray-500 mt-2">{experience.date}</p>
                 </div>
               </div>

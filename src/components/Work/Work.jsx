@@ -1,24 +1,51 @@
-import React, { useState } from "react";
-import { projects } from '../../../constants'
+import React, { useState, useRef, useEffect } from "react";
+import { projects } from "../../../constants";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FiArrowRight } from "react-icons/fi";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const cardsRef = useRef([]);
 
-  const handleOpenModal = (project) => {
-    setSelectedProject(project);
-  };
+  useEffect(() => {
+    cardsRef.current.forEach((card) => {
+      if (!card) return;
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50, scale: 0.8 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration:0.1,
+          ease: "power1.out",
+          delay:  0.2,
 
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+            stagger:'1',
+          scrub:true,
+          },
+        }
+      );
+    });
+  }, []);
+
+  const handleOpenModal = (project) => setSelectedProject(project);
+  const handleCloseModal = () => setSelectedProject(null);
 
   return (
     <section
       id="work"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[7vw] font-sans relative"
+      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[7vw] font-sans relative flex justify-center items-center text-center flex-col"
     >
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 ">
         <h2 className="text-4xl font-[elgoc] uppercase text-white">PROJECTS</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
@@ -29,9 +56,10 @@ const Work = () => {
 
       {/* Projects Grid */}
       <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <div
             key={project.id}
+            ref={(el) => (cardsRef.current[index] = el)}
             onClick={() => handleOpenModal(project)}
             className="border border-white bg-gray-900 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-purple-500/50 hover:-translate-y-2 transition-transform duration-300"
           >
@@ -50,9 +78,9 @@ const Work = () => {
                 {project.description}
               </p>
               <div className="mb-4">
-                {project.tags.map((tag, index) => (
+                {project.tags.map((tag, i) => (
                   <span
-                    key={index}
+                    key={i}
                     className="inline-block bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1 mr-2 mb-2"
                   >
                     {tag}
@@ -64,10 +92,10 @@ const Work = () => {
         ))}
       </div>
 
-      {/* Modal Container */}
+      {/* Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
-          <div className="bg-gray-900 rounded-xl shadow-2xl lg:w-[60vw]  w-[90%] max-w-3xl overflow-hidden relative">
+          <div className="bg-gray-900 rounded-xl shadow-2xl lg:w-[60vw] w-[90%] max-w-3xl overflow-hidden relative">
             <div className="flex justify-end p-4">
               <button
                 onClick={handleCloseModal}
@@ -77,8 +105,8 @@ const Work = () => {
               </button>
             </div>
 
-            <div className="flex flex-col ">
-              <div className="w-full flex justify-center bg-gray-900 px-4 md:px-40 ">
+            <div className="flex flex-col">
+              <div className="w-full flex justify-center bg-gray-900 px-4 md:px-40">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
@@ -93,9 +121,9 @@ const Work = () => {
                   {selectedProject.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {selectedProject.tags.map((tag, index) => (
+                  {selectedProject.tags.map((tag, i) => (
                     <span
-                      key={index}
+                      key={i}
                       className="bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1"
                     >
                       {tag}
@@ -125,6 +153,8 @@ const Work = () => {
           </div>
         </div>
       )}
+      <button className=" p-[10px_50px] mt-20 bg-[#8245ec] hover:bg-[#361869] cursor-pointer transition-all ease-in-out duration-150 rounded-xl"><a href="https://github.com/Deepak-Mane1902" target="_blank" rel="noopener noreferrer" className="flex items-center  gap-2 text-xl">
+        See More<FiArrowRight className="text-white mt-1"/></a></button>
     </section>
   );
 };
