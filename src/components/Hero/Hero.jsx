@@ -89,9 +89,9 @@ const Hero = () => {
 
           <button
             onClick={handleDownload}
-            className="btn-dwn-cv mt-4 w-[50vw] lg:w-auto  py-4 px-[4vw] mx-30 md:mx-0 rounded-2xl bg-[#2b0a66] border-none hover:bg-[#8245ec] cursor-pointer flex gap-2 items-center transition-all ease-in-out duration-150"
+            className="btn-dwn-cv mt-4 w-[45vw] md:w-auto  py-4 px-[4vw] mx-30 md:mx-0 rounded-2xl bg-[#2b0a66] border-none hover:bg-[#8245ec] cursor-pointer flex gap-2 items-center text-center transition-all ease-in-out duration-150"
           >
-            <span className="flex justify-center md:justify-start gap-2 items-center text-white/70 hover:text-white">
+            <span className="flex justify-center md:justify-start gap-2 items-center text-white/70 hover:text-white text-center">
               Download CV
               <FiArrowRight className="text-2xl hover:pl-1" />
             </span>
