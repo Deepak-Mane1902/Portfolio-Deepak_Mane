@@ -58,7 +58,7 @@ const ScrollMarquee = () => {
       {/* Bottom Row */}
       <div
         ref={row2Ref}
-        className=" mt-[-1vh] md:mt-[-14vh] ml-[-50vw] scroll-row flex gap-16 whitespace-nowrap text-[8vw] font-bold uppercase text-purple-400"
+        className=" mt-[-3vh] md:mt-[-14vh] ml-[-50vw] scroll-row flex gap-16 whitespace-nowrap text-[8vw] font-bold uppercase text-purple-400"
       >
         <span>. Modern</span>
         <span>. Standarization</span>
